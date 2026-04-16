@@ -1,6 +1,6 @@
 # DataScienceFinal
 
-Stage 1 and Stage 2 workflow for the Ethereum block activity project described in `proposal.txt`.
+Stage 1, 2, and 3 workflow for the Ethereum block activity project described in `proposal.txt`.
 
 ## Files
 
@@ -8,6 +8,7 @@ Stage 1 and Stage 2 workflow for the Ethereum block activity project described i
 - `clean_blocks.py`: cleans and standardizes raw fields, saves `cleaned_blocks.csv`, and writes `data_quality_report.md`.
 - `feature_engineering.py`: adds rolling recent-activity, congestion, spike, and next-block target features, saving `engineered_blocks.csv`.
 - `eda.py`: creates Stage 1 EDA visuals and interpretations under `eda_outputs/`.
+- `model_training.py`: trains Logistic Regression and Random Forest models with hyperparameter tuning, evaluates with multiple metrics, and generates comparison reports to `model_outputs/`.
 - `stage1_stage2_summary.md`: short report covering source, schema, ethics, cleaning, features, and EDA.
 - `optional_notes_for_stage3.md`: modeling handoff notes for the teammate handling Stage 3.
 
@@ -18,6 +19,7 @@ python3 scrape_blocks.py --pages 50 --page-size 100 --delay 0.45 --parse-retries
 python3 clean_blocks.py
 python3 feature_engineering.py
 python3 eda.py
+python3 model_training.py
 ```
 
 If a scraped raw file has complete `raw_row_text` values but shifted columns because Etherscan exposed hidden table fields, repair it locally without scraping again:

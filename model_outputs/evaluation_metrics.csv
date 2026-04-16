@@ -1,0 +1,21 @@
+model,split,metric,value
+Logistic Regression,train,accuracy,0.9997
+Logistic Regression,train,precision,1.0000
+Logistic Regression,train,recall,0.9993
+Logistic Regression,train,f1,0.9996
+Logistic Regression,train,roc_auc,1.0000
+Logistic Regression,test,accuracy,0.9880
+Logistic Regression,test,precision,0.9955
+Logistic Regression,test,recall,0.9781
+Logistic Regression,test,f1,0.9867
+Logistic Regression,test,roc_auc,0.9993
+Random Forest,train,accuracy,1.0000
+Random Forest,train,precision,1.0000
+Random Forest,train,recall,1.0000
+Random Forest,train,f1,1.0000
+Random Forest,train,roc_auc,1.0000
+Random Forest,test,accuracy,0.9650
+Random Forest,test,precision,0.9930
+Random Forest,test,recall,0.9298
+Random Forest,test,f1,0.9604
+Random Forest,test,roc_auc,0.9975
