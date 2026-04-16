@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="760" viewBox="0 0 980 760">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#1f2933}
+.title{font-size:20px;font-weight:700}
+.axis{stroke:#475569;stroke-width:1}
+.grid{stroke:#e2e8f0;stroke-width:1}
+.small{font-size:12px}
+.label{font-size:13px;font-weight:600}
+</style>
+<rect width="980" height="760" fill="#ffffff"/>
+<text class="title" x="24" y="32">Correlation Heatmap For Block Activity Features</text>
+<text class="small" transform="translate(241.00,168) rotate(-55)" text-anchor="start">txn_count</text>
+<text class="small" x="210" y="207.30" text-anchor="end">txn_count</text>
+<text class="small" transform="translate(283.00,168) rotate(-55)" text-anchor="start">gas_used</text>
+<text class="small" x="210" y="249.30" text-anchor="end">gas_used</text>
+<text class="small" transform="translate(325.00,168) rotate(-55)" text-anchor="start">base_fee_gwei</text>
+<text class="small" x="210" y="291.30" text-anchor="end">base_fee_gwei</text>
+<text class="small" transform="translate(367.00,168) rotate(-55)" text-anchor="start">reward_eth</text>
+<text class="small" x="210" y="333.30" text-anchor="end">reward_eth</text>
+<text class="small" transform="translate(409.00,168) rotate(-55)" text-anchor="start">burnt_fees_eth</text>
+<text class="small" x="210" y="375.30" text-anchor="end">burnt_fees_eth</text>
+<text class="small" transform="translate(451.00,168) rotate(-55)" text-anchor="start">congestion_ratio</text>
+<text class="small" x="210" y="417.30" text-anchor="end">congestion_ratio</text>
+<text class="small" transform="translate(493.00,168) rotate(-55)" text-anchor="start">rolling_avg_txn_20</text>
+<text class="small" x="210" y="459.30" text-anchor="end">rolling_avg_txn_20</text>
+<text class="small" transform="translate(535.00,168) rotate(-55)" text-anchor="start">rolling_avg_gas_used_20</text>
+<text class="small" x="210" y="501.30" text-anchor="end">rolling_avg_gas_used_20</text>
+<text class="small" transform="translate(577.00,168) rotate(-55)" text-anchor="start">rolling_avg_base_fee_20</text>
+<text class="small" x="210" y="543.30" text-anchor="end">rolling_avg_base_fee_20</text>
+<text class="small" transform="translate(619.00,168) rotate(-55)" text-anchor="start">rolling_avg_congestion_20</text>
+<text class="small" x="210" y="585.30" text-anchor="end">rolling_avg_congestion_20</text>
+<rect x="220" y="180" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="241.00" y="206.04" text-anchor="middle">1.00</text>
+<rect x="262" y="180" width="42" height="42" fill="rgb(255,160,160)" stroke="#ffffff"/>
+<text class="small" x="283.00" y="206.04" text-anchor="middle">0.65</text>
+<rect x="304" y="180" width="42" height="42" fill="rgb(243,243,255)" stroke="#ffffff"/>
+<text class="small" x="325.00" y="206.04" text-anchor="middle">-0.08</text>
+<rect x="346" y="180" width="42" height="42" fill="rgb(251,251,255)" stroke="#ffffff"/>
+<text class="small" x="367.00" y="206.04" text-anchor="middle">-0.02</text>
+<rect x="388" y="180" width="42" height="42" fill="rgb(255,248,248)" stroke="#ffffff"/>
+<text class="small" x="409.00" y="206.04" text-anchor="middle">0.05</text>
+<rect x="430" y="180" width="42" height="42" fill="rgb(255,160,160)" stroke="#ffffff"/>
+<text class="small" x="451.00" y="206.04" text-anchor="middle">0.65</text>
+<rect x="472" y="180" width="42" height="42" fill="rgb(255,198,198)" stroke="#ffffff"/>
+<text class="small" x="493.00" y="206.04" text-anchor="middle">0.39</text>
+<rect x="514" y="180" width="42" height="42" fill="rgb(255,247,247)" stroke="#ffffff"/>
+<text class="small" x="535.00" y="206.04" text-anchor="middle">0.05</text>
+<rect x="556" y="180" width="42" height="42" fill="rgb(245,245,255)" stroke="#ffffff"/>
+<text class="small" x="577.00" y="206.04" text-anchor="middle">-0.07</text>
+<rect x="598" y="180" width="42" height="42" fill="rgb(255,247,247)" stroke="#ffffff"/>
+<text class="small" x="619.00" y="206.04" text-anchor="middle">0.05</text>
+<rect x="220" y="222" width="42" height="42" fill="rgb(255,160,160)" stroke="#ffffff"/>
+<text class="small" x="241.00" y="248.04" text-anchor="middle">0.65</text>
+<rect x="262" y="222" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="283.00" y="248.04" text-anchor="middle">1.00</text>
+<rect x="304" y="222" width="42" height="42" fill="rgb(252,252,255)" stroke="#ffffff"/>
+<text class="small" x="325.00" y="248.04" text-anchor="middle">-0.01</text>
+<rect x="346" y="222" width="42" height="42" fill="rgb(255,229,229)" stroke="#ffffff"/>
+<text class="small" x="367.00" y="248.04" text-anchor="middle">0.18</text>
+<rect x="388" y="222" width="42" height="42" fill="rgb(255,225,225)" stroke="#ffffff"/>
+<text class="small" x="409.00" y="248.04" text-anchor="middle">0.21</text>
+<rect x="430" y="222" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="451.00" y="248.04" text-anchor="middle">1.00</text>
+<rect x="472" y="222" width="42" height="42" fill="rgb(255,249,249)" stroke="#ffffff"/>
+<text class="small" x="493.00" y="248.04" text-anchor="middle">0.04</text>
+<rect x="514" y="222" width="42" height="42" fill="rgb(255,215,215)" stroke="#ffffff"/>
+<text class="small" x="535.00" y="248.04" text-anchor="middle">0.27</text>
+<rect x="556" y="222" width="42" height="42" fill="rgb(249,249,255)" stroke="#ffffff"/>
+<text class="small" x="577.00" y="248.04" text-anchor="middle">-0.04</text>
+<rect x="598" y="222" width="42" height="42" fill="rgb(255,215,215)" stroke="#ffffff"/>
+<text class="small" x="619.00" y="248.04" text-anchor="middle">0.27</text>
+<rect x="220" y="264" width="42" height="42" fill="rgb(243,243,255)" stroke="#ffffff"/>
+<text class="small" x="241.00" y="290.04" text-anchor="middle">-0.08</text>
+<rect x="262" y="264" width="42" height="42" fill="rgb(252,252,255)" stroke="#ffffff"/>
+<text class="small" x="283.00" y="290.04" text-anchor="middle">-0.01</text>
+<rect x="304" y="264" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="325.00" y="290.04" text-anchor="middle">1.00</text>
+<rect x="346" y="264" width="42" height="42" fill="rgb(255,199,199)" stroke="#ffffff"/>
+<text class="small" x="367.00" y="290.04" text-anchor="middle">0.38</text>
+<rect x="388" y="264" width="42" height="42" fill="rgb(255,127,127)" stroke="#ffffff"/>
+<text class="small" x="409.00" y="290.04" text-anchor="middle">0.88</text>
+<rect x="430" y="264" width="42" height="42" fill="rgb(252,252,255)" stroke="#ffffff"/>
+<text class="small" x="451.00" y="290.04" text-anchor="middle">-0.01</text>
+<rect x="472" y="264" width="42" height="42" fill="rgb(225,225,255)" stroke="#ffffff"/>
+<text class="small" x="493.00" y="290.04" text-anchor="middle">-0.20</text>
+<rect x="514" y="264" width="42" height="42" fill="rgb(255,225,225)" stroke="#ffffff"/>
+<text class="small" x="535.00" y="290.04" text-anchor="middle">0.20</text>
+<rect x="556" y="264" width="42" height="42" fill="rgb(255,116,116)" stroke="#ffffff"/>
+<text class="small" x="577.00" y="290.04" text-anchor="middle">0.96</text>
+<rect x="598" y="264" width="42" height="42" fill="rgb(255,225,225)" stroke="#ffffff"/>
+<text class="small" x="619.00" y="290.04" text-anchor="middle">0.20</text>
+<rect x="220" y="306" width="42" height="42" fill="rgb(251,251,255)" stroke="#ffffff"/>
+<text class="small" x="241.00" y="332.04" text-anchor="middle">-0.02</text>
+<rect x="262" y="306" width="42" height="42" fill="rgb(255,229,229)" stroke="#ffffff"/>
+<text class="small" x="283.00" y="332.04" text-anchor="middle">0.18</text>
+<rect x="304" y="306" width="42" height="42" fill="rgb(255,199,199)" stroke="#ffffff"/>
+<text class="small" x="325.00" y="332.04" text-anchor="middle">0.38</text>
+<rect x="346" y="306" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="367.00" y="332.04" text-anchor="middle">1.00</text>
+<rect x="388" y="306" width="42" height="42" fill="rgb(255,177,177)" stroke="#ffffff"/>
+<text class="small" x="409.00" y="332.04" text-anchor="middle">0.53</text>
+<rect x="430" y="306" width="42" height="42" fill="rgb(255,229,229)" stroke="#ffffff"/>
+<text class="small" x="451.00" y="332.04" text-anchor="middle">0.18</text>
+<rect x="472" y="306" width="42" height="42" fill="rgb(233,233,255)" stroke="#ffffff"/>
+<text class="small" x="493.00" y="332.04" text-anchor="middle">-0.15</text>
+<rect x="514" y="306" width="42" height="42" fill="rgb(255,206,206)" stroke="#ffffff"/>
+<text class="small" x="535.00" y="332.04" text-anchor="middle">0.34</text>
+<rect x="556" y="306" width="42" height="42" fill="rgb(255,212,212)" stroke="#ffffff"/>
+<text class="small" x="577.00" y="332.04" text-anchor="middle">0.29</text>
+<rect x="598" y="306" width="42" height="42" fill="rgb(255,206,206)" stroke="#ffffff"/>
+<text class="small" x="619.00" y="332.04" text-anchor="middle">0.34</text>
+<rect x="220" y="348" width="42" height="42" fill="rgb(255,248,248)" stroke="#ffffff"/>
+<text class="small" x="241.00" y="374.04" text-anchor="middle">0.05</text>
+<rect x="262" y="348" width="42" height="42" fill="rgb(255,225,225)" stroke="#ffffff"/>
+<text class="small" x="283.00" y="374.04" text-anchor="middle">0.21</text>
+<rect x="304" y="348" width="42" height="42" fill="rgb(255,127,127)" stroke="#ffffff"/>
+<text class="small" x="325.00" y="374.04" text-anchor="middle">0.88</text>
+<rect x="346" y="348" width="42" height="42" fill="rgb(255,177,177)" stroke="#ffffff"/>
+<text class="small" x="367.00" y="374.04" text-anchor="middle">0.53</text>
+<rect x="388" y="348" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="409.00" y="374.04" text-anchor="middle">1.00</text>
+<rect x="430" y="348" width="42" height="42" fill="rgb(255,225,225)" stroke="#ffffff"/>
+<text class="small" x="451.00" y="374.04" text-anchor="middle">0.21</text>
+<rect x="472" y="348" width="42" height="42" fill="rgb(228,228,255)" stroke="#ffffff"/>
+<text class="small" x="493.00" y="374.04" text-anchor="middle">-0.18</text>
+<rect x="514" y="348" width="42" height="42" fill="rgb(255,205,205)" stroke="#ffffff"/>
+<text class="small" x="535.00" y="374.04" text-anchor="middle">0.34</text>
+<rect x="556" y="348" width="42" height="42" fill="rgb(255,140,140)" stroke="#ffffff"/>
+<text class="small" x="577.00" y="374.04" text-anchor="middle">0.79</text>
+<rect x="598" y="348" width="42" height="42" fill="rgb(255,205,205)" stroke="#ffffff"/>
+<text class="small" x="619.00" y="374.04" text-anchor="middle">0.34</text>
+<rect x="220" y="390" width="42" height="42" fill="rgb(255,160,160)" stroke="#ffffff"/>
+<text class="small" x="241.00" y="416.04" text-anchor="middle">0.65</text>
+<rect x="262" y="390" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="283.00" y="416.04" text-anchor="middle">1.00</text>
+<rect x="304" y="390" width="42" height="42" fill="rgb(252,252,255)" stroke="#ffffff"/>
+<text class="small" x="325.00" y="416.04" text-anchor="middle">-0.01</text>
+<rect x="346" y="390" width="42" height="42" fill="rgb(255,229,229)" stroke="#ffffff"/>
+<text class="small" x="367.00" y="416.04" text-anchor="middle">0.18</text>
+<rect x="388" y="390" width="42" height="42" fill="rgb(255,225,225)" stroke="#ffffff"/>
+<text class="small" x="409.00" y="416.04" text-anchor="middle">0.21</text>
+<rect x="430" y="390" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="451.00" y="416.04" text-anchor="middle">1.00</text>
+<rect x="472" y="390" width="42" height="42" fill="rgb(255,249,249)" stroke="#ffffff"/>
+<text class="small" x="493.00" y="416.04" text-anchor="middle">0.04</text>
+<rect x="514" y="390" width="42" height="42" fill="rgb(255,215,215)" stroke="#ffffff"/>
+<text class="small" x="535.00" y="416.04" text-anchor="middle">0.27</text>
+<rect x="556" y="390" width="42" height="42" fill="rgb(249,249,255)" stroke="#ffffff"/>
+<text class="small" x="577.00" y="416.04" text-anchor="middle">-0.04</text>
+<rect x="598" y="390" width="42" height="42" fill="rgb(255,215,215)" stroke="#ffffff"/>
+<text class="small" x="619.00" y="416.04" text-anchor="middle">0.27</text>
+<rect x="220" y="432" width="42" height="42" fill="rgb(255,198,198)" stroke="#ffffff"/>
+<text class="small" x="241.00" y="458.04" text-anchor="middle">0.39</text>
+<rect x="262" y="432" width="42" height="42" fill="rgb(255,249,249)" stroke="#ffffff"/>
+<text class="small" x="283.00" y="458.04" text-anchor="middle">0.04</text>
+<rect x="304" y="432" width="42" height="42" fill="rgb(225,225,255)" stroke="#ffffff"/>
+<text class="small" x="325.00" y="458.04" text-anchor="middle">-0.20</text>
+<rect x="346" y="432" width="42" height="42" fill="rgb(233,233,255)" stroke="#ffffff"/>
+<text class="small" x="367.00" y="458.04" text-anchor="middle">-0.15</text>
+<rect x="388" y="432" width="42" height="42" fill="rgb(228,228,255)" stroke="#ffffff"/>
+<text class="small" x="409.00" y="458.04" text-anchor="middle">-0.18</text>
+<rect x="430" y="432" width="42" height="42" fill="rgb(255,249,249)" stroke="#ffffff"/>
+<text class="small" x="451.00" y="458.04" text-anchor="middle">0.04</text>
+<rect x="472" y="432" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="493.00" y="458.04" text-anchor="middle">1.00</text>
+<rect x="514" y="432" width="42" height="42" fill="rgb(255,251,251)" stroke="#ffffff"/>
+<text class="small" x="535.00" y="458.04" text-anchor="middle">0.02</text>
+<rect x="556" y="432" width="42" height="42" fill="rgb(226,226,255)" stroke="#ffffff"/>
+<text class="small" x="577.00" y="458.04" text-anchor="middle">-0.20</text>
+<rect x="598" y="432" width="42" height="42" fill="rgb(255,251,251)" stroke="#ffffff"/>
+<text class="small" x="619.00" y="458.04" text-anchor="middle">0.02</text>
+<rect x="220" y="474" width="42" height="42" fill="rgb(255,247,247)" stroke="#ffffff"/>
+<text class="small" x="241.00" y="500.04" text-anchor="middle">0.05</text>
+<rect x="262" y="474" width="42" height="42" fill="rgb(255,215,215)" stroke="#ffffff"/>
+<text class="small" x="283.00" y="500.04" text-anchor="middle">0.27</text>
+<rect x="304" y="474" width="42" height="42" fill="rgb(255,225,225)" stroke="#ffffff"/>
+<text class="small" x="325.00" y="500.04" text-anchor="middle">0.20</text>
+<rect x="346" y="474" width="42" height="42" fill="rgb(255,206,206)" stroke="#ffffff"/>
+<text class="small" x="367.00" y="500.04" text-anchor="middle">0.34</text>
+<rect x="388" y="474" width="42" height="42" fill="rgb(255,205,205)" stroke="#ffffff"/>
+<text class="small" x="409.00" y="500.04" text-anchor="middle">0.34</text>
+<rect x="430" y="474" width="42" height="42" fill="rgb(255,215,215)" stroke="#ffffff"/>
+<text class="small" x="451.00" y="500.04" text-anchor="middle">0.27</text>
+<rect x="472" y="474" width="42" height="42" fill="rgb(255,251,251)" stroke="#ffffff"/>
+<text class="small" x="493.00" y="500.04" text-anchor="middle">0.02</text>
+<rect x="514" y="474" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="535.00" y="500.04" text-anchor="middle">1.00</text>
+<rect x="556" y="474" width="42" height="42" fill="rgb(255,253,253)" stroke="#ffffff"/>
+<text class="small" x="577.00" y="500.04" text-anchor="middle">0.01</text>
+<rect x="598" y="474" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="619.00" y="500.04" text-anchor="middle">1.00</text>
+<rect x="220" y="516" width="42" height="42" fill="rgb(245,245,255)" stroke="#ffffff"/>
+<text class="small" x="241.00" y="542.04" text-anchor="middle">-0.07</text>
+<rect x="262" y="516" width="42" height="42" fill="rgb(249,249,255)" stroke="#ffffff"/>
+<text class="small" x="283.00" y="542.04" text-anchor="middle">-0.04</text>
+<rect x="304" y="516" width="42" height="42" fill="rgb(255,116,116)" stroke="#ffffff"/>
+<text class="small" x="325.00" y="542.04" text-anchor="middle">0.96</text>
+<rect x="346" y="516" width="42" height="42" fill="rgb(255,212,212)" stroke="#ffffff"/>
+<text class="small" x="367.00" y="542.04" text-anchor="middle">0.29</text>
+<rect x="388" y="516" width="42" height="42" fill="rgb(255,140,140)" stroke="#ffffff"/>
+<text class="small" x="409.00" y="542.04" text-anchor="middle">0.79</text>
+<rect x="430" y="516" width="42" height="42" fill="rgb(249,249,255)" stroke="#ffffff"/>
+<text class="small" x="451.00" y="542.04" text-anchor="middle">-0.04</text>
+<rect x="472" y="516" width="42" height="42" fill="rgb(226,226,255)" stroke="#ffffff"/>
+<text class="small" x="493.00" y="542.04" text-anchor="middle">-0.20</text>
+<rect x="514" y="516" width="42" height="42" fill="rgb(255,253,253)" stroke="#ffffff"/>
+<text class="small" x="535.00" y="542.04" text-anchor="middle">0.01</text>
+<rect x="556" y="516" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="577.00" y="542.04" text-anchor="middle">1.00</text>
+<rect x="598" y="516" width="42" height="42" fill="rgb(255,253,253)" stroke="#ffffff"/>
+<text class="small" x="619.00" y="542.04" text-anchor="middle">0.01</text>
+<rect x="220" y="558" width="42" height="42" fill="rgb(255,247,247)" stroke="#ffffff"/>
+<text class="small" x="241.00" y="584.04" text-anchor="middle">0.05</text>
+<rect x="262" y="558" width="42" height="42" fill="rgb(255,215,215)" stroke="#ffffff"/>
+<text class="small" x="283.00" y="584.04" text-anchor="middle">0.27</text>
+<rect x="304" y="558" width="42" height="42" fill="rgb(255,225,225)" stroke="#ffffff"/>
+<text class="small" x="325.00" y="584.04" text-anchor="middle">0.20</text>
+<rect x="346" y="558" width="42" height="42" fill="rgb(255,206,206)" stroke="#ffffff"/>
+<text class="small" x="367.00" y="584.04" text-anchor="middle">0.34</text>
+<rect x="388" y="558" width="42" height="42" fill="rgb(255,205,205)" stroke="#ffffff"/>
+<text class="small" x="409.00" y="584.04" text-anchor="middle">0.34</text>
+<rect x="430" y="558" width="42" height="42" fill="rgb(255,215,215)" stroke="#ffffff"/>
+<text class="small" x="451.00" y="584.04" text-anchor="middle">0.27</text>
+<rect x="472" y="558" width="42" height="42" fill="rgb(255,251,251)" stroke="#ffffff"/>
+<text class="small" x="493.00" y="584.04" text-anchor="middle">0.02</text>
+<rect x="514" y="558" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="535.00" y="584.04" text-anchor="middle">1.00</text>
+<rect x="556" y="558" width="42" height="42" fill="rgb(255,253,253)" stroke="#ffffff"/>
+<text class="small" x="577.00" y="584.04" text-anchor="middle">0.01</text>
+<rect x="598" y="558" width="42" height="42" fill="rgb(255,110,110)" stroke="#ffffff"/>
+<text class="small" x="619.00" y="584.04" text-anchor="middle">1.00</text>
+<text class="small" x="690" y="690">Blue = negative, red = positive, white = weak/zero</text>
+</svg>

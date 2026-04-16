@@ -1,0 +1,31 @@
+Problem Statement and Motivation
+Ethereum blocks vary in transaction count and gas usage, reflecting changes in network activity and congestion. Some blocks are lightly utilized, while others are much fuller and consume more gas.
+In our project we aim to analyze Ethereum block data to study how block activity changes over time and whether recent block behavior can help explain gas usage in upcoming blocks. Understanding these patterns is useful because gas usage reflects network demand and overall block utilization. More broadly, this project shows how blockchain data can be used to study network behavior with data science methods.
+
+More personally, we are also motivated by an interest in blockchain technology, and how to use it most efficiently. By studying block activity and congestion, we hope to better understand when the network demand is lower and our transactions can be executed cost effectively. 
+Data Sources
+Our primary data source will be the Ethereum blocks pages on Etherscan:
+https://etherscan.io/blocks
+We will iterate through paginated block pages, such as:
+https://etherscan.io/blocks?ps=100&p=1
+https://etherscan.io/blocks?ps=100&p=2
+https://etherscan.io/blocks?ps=100&p=3
+Each page contains 100 Ethereum blocks and includes block-level fields such as:
+block number
+age
+transaction count
+gas used
+gas limit
+base fee
+reward
+burnt fees
+This provides a block-level dataset of recent Ethereum network activity that can be collected across thousands of blocks.
+
+
+Planned Approach
+We will collect block-level Ethereum data from Etherscan and organize it into a structured dataset where each row represents one block. We then plan to analyze how recent block activity, such as transaction count, gas usage, and base fee, relates to later blocks.
+Using this data, we plan to engineer additional features such as rolling transaction counts, recent gas usage trends, and simple congestion indicators. These features will allow us to study transaction activity over time, identify periods of lower network congestion, and explore whether recent block behavior is informative for future block conditions.
+Two predictive models will be trained to evaluate this relationship. The first model will be Logistic Regression, which will give a simple baseline and enable interpretation on how individual variables relate to block congestion. The second model will be the Random Forest model, which will capture nonlinear relationships and interactions between features. The models will be used to attempt to predict whether the next block will have higher gas usage or congestion based on recent block statistics.
+The dataset will be split into training and testing sets, and we’ll evaluate model performance based on accuracy. By comparing the two models, we should see whether simple linear or more complex patterns describe block behavior.
+
+
