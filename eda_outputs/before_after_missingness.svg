@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#1f2933}
+.title{font-size:20px;font-weight:700}
+.axis{stroke:#475569;stroke-width:1}
+.grid{stroke:#e2e8f0;stroke-width:1}
+.small{font-size:12px}
+.label{font-size:13px;font-weight:600}
+</style>
+<rect width="980" height="560" fill="#ffffff"/>
+<text class="title" x="24" y="32">Before/After Missingness Comparison</text>
+<line class="axis" x1="82" y1="440" x2="940" y2="440"/>
+<line class="axis" x1="82" y1="440" x2="82" y2="78"/>
+<rect x="98.00" y="440.00" width="22" height="0.00" fill="#f2994a"/>
+<rect x="126.00" y="440.00" width="22" height="0.00" fill="#27ae60"/>
+<text class="small" transform="translate(126.00,458) rotate(35)" text-anchor="start">block</text>
+<rect x="220.57" y="440.00" width="22" height="0.00" fill="#f2994a"/>
+<rect x="248.57" y="440.00" width="22" height="0.00" fill="#27ae60"/>
+<text class="small" transform="translate(248.57,458) rotate(35)" text-anchor="start">txn</text>
+<rect x="343.14" y="440.00" width="22" height="0.00" fill="#f2994a"/>
+<rect x="371.14" y="440.00" width="22" height="0.00" fill="#27ae60"/>
+<text class="small" transform="translate(371.14,458) rotate(35)" text-anchor="start">gas used</text>
+<rect x="465.71" y="440.00" width="22" height="0.00" fill="#f2994a"/>
+<rect x="493.71" y="440.00" width="22" height="0.00" fill="#27ae60"/>
+<text class="small" transform="translate(493.71,458) rotate(35)" text-anchor="start">gas limit</text>
+<rect x="588.29" y="440.00" width="22" height="0.00" fill="#f2994a"/>
+<rect x="616.29" y="440.00" width="22" height="0.00" fill="#27ae60"/>
+<text class="small" transform="translate(616.29,458) rotate(35)" text-anchor="start">base fee</text>
+<rect x="710.86" y="440.00" width="22" height="0.00" fill="#f2994a"/>
+<rect x="738.86" y="440.00" width="22" height="0.00" fill="#27ae60"/>
+<text class="small" transform="translate(738.86,458) rotate(35)" text-anchor="start">reward</text>
+<rect x="833.43" y="440.00" width="22" height="0.00" fill="#f2994a"/>
+<rect x="861.43" y="440.00" width="22" height="0.00" fill="#27ae60"/>
+<text class="small" transform="translate(861.43,458) rotate(35)" text-anchor="start">burnt fees</text>
+<line class="grid" x1="82" y1="440.00" x2="940" y2="440.00"/>
+<text class="small" x="30" y="444.00">0%</text>
+<line class="grid" x1="82" y1="349.50" x2="940" y2="349.50"/>
+<text class="small" x="30" y="353.50">25%</text>
+<line class="grid" x1="82" y1="259.00" x2="940" y2="259.00"/>
+<text class="small" x="30" y="263.00">50%</text>
+<line class="grid" x1="82" y1="168.50" x2="940" y2="168.50"/>
+<text class="small" x="30" y="172.50">75%</text>
+<line class="grid" x1="82" y1="78.00" x2="940" y2="78.00"/>
+<text class="small" x="30" y="82.00">100%</text>
+<rect x="710" y="56" width="14" height="14" fill="#f2994a"/><text class="small" x="732" y="68">Raw missing %</text>
+<rect x="830" y="56" width="14" height="14" fill="#27ae60"/><text class="small" x="852" y="68">Cleaned missing %</text>
+</svg>

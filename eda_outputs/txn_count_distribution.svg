@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#1f2933}
+.title{font-size:20px;font-weight:700}
+.axis{stroke:#475569;stroke-width:1}
+.grid{stroke:#e2e8f0;stroke-width:1}
+.small{font-size:12px}
+.label{font-size:13px;font-weight:600}
+</style>
+<rect width="920" height="560" fill="#ffffff"/>
+<text class="title" x="24" y="32">Transaction Count Distribution</text>
+<line class="axis" x1="72" y1="488" x2="888" y2="488"/>
+<line class="axis" x1="72" y1="488" x2="72" y2="68"/>
+<rect x="72.00" y="449.77" width="25.20" height="38.23" fill="#2f80ed" opacity="0.82"/>
+<rect x="99.20" y="417.38" width="25.20" height="70.62" fill="#2f80ed" opacity="0.82"/>
+<rect x="126.40" y="380.74" width="25.20" height="107.26" fill="#2f80ed" opacity="0.82"/>
+<rect x="153.60" y="323.40" width="25.20" height="164.60" fill="#2f80ed" opacity="0.82"/>
+<rect x="180.80" y="224.11" width="25.20" height="263.89" fill="#2f80ed" opacity="0.82"/>
+<rect x="208.00" y="157.73" width="25.20" height="330.27" fill="#2f80ed" opacity="0.82"/>
+<rect x="235.20" y="68.00" width="25.20" height="420.00" fill="#2f80ed" opacity="0.82"/>
+<rect x="262.40" y="103.04" width="25.20" height="384.96" fill="#2f80ed" opacity="0.82"/>
+<rect x="289.60" y="228.35" width="25.20" height="259.65" fill="#2f80ed" opacity="0.82"/>
+<rect x="316.80" y="308.00" width="25.20" height="180.00" fill="#2f80ed" opacity="0.82"/>
+<rect x="344.00" y="350.48" width="25.20" height="137.52" fill="#2f80ed" opacity="0.82"/>
+<rect x="371.20" y="396.14" width="25.20" height="91.86" fill="#2f80ed" opacity="0.82"/>
+<rect x="398.40" y="426.41" width="25.20" height="61.59" fill="#2f80ed" opacity="0.82"/>
+<rect x="425.60" y="442.34" width="25.20" height="45.66" fill="#2f80ed" opacity="0.82"/>
+<rect x="452.80" y="453.49" width="25.20" height="34.51" fill="#2f80ed" opacity="0.82"/>
+<rect x="480.00" y="470.48" width="25.20" height="17.52" fill="#2f80ed" opacity="0.82"/>
+<rect x="507.20" y="469.42" width="25.20" height="18.58" fill="#2f80ed" opacity="0.82"/>
+<rect x="534.40" y="480.04" width="25.20" height="7.96" fill="#2f80ed" opacity="0.82"/>
+<rect x="561.60" y="481.10" width="25.20" height="6.90" fill="#2f80ed" opacity="0.82"/>
+<rect x="588.80" y="484.28" width="25.20" height="3.72" fill="#2f80ed" opacity="0.82"/>
+<rect x="616.00" y="486.94" width="25.20" height="1.06" fill="#2f80ed" opacity="0.82"/>
+<rect x="643.20" y="484.81" width="25.20" height="3.19" fill="#2f80ed" opacity="0.82"/>
+<rect x="670.40" y="487.47" width="25.20" height="0.53" fill="#2f80ed" opacity="0.82"/>
+<rect x="697.60" y="487.47" width="25.20" height="0.53" fill="#2f80ed" opacity="0.82"/>
+<rect x="724.80" y="487.47" width="25.20" height="0.53" fill="#2f80ed" opacity="0.82"/>
+<rect x="752.00" y="486.94" width="25.20" height="1.06" fill="#2f80ed" opacity="0.82"/>
+<rect x="779.20" y="487.47" width="25.20" height="0.53" fill="#2f80ed" opacity="0.82"/>
+<rect x="806.40" y="488.00" width="25.20" height="0.00" fill="#2f80ed" opacity="0.82"/>
+<rect x="833.60" y="488.00" width="25.20" height="0.00" fill="#2f80ed" opacity="0.82"/>
+<rect x="860.80" y="487.47" width="25.20" height="0.53" fill="#2f80ed" opacity="0.82"/>
+<line class="grid" x1="72" y1="488.00" x2="888" y2="488.00"/>
+<text class="small" x="30" y="492.00">0</text>
+<line class="grid" x1="72" y1="383.00" x2="888" y2="383.00"/>
+<text class="small" x="30" y="387.00">198</text>
+<line class="grid" x1="72" y1="278.00" x2="888" y2="278.00"/>
+<text class="small" x="30" y="282.00">396</text>
+<line class="grid" x1="72" y1="173.00" x2="888" y2="173.00"/>
+<text class="small" x="30" y="177.00">593</text>
+<line class="grid" x1="72" y1="68.00" x2="888" y2="68.00"/>
+<text class="small" x="30" y="72.00">791</text>
+<text class="label" x="410.00" y="536">Transactions per block</text>
+<text class="small" x="72" y="512">0</text>
+<text class="small" x="818" y="512">1069</text>
+<text class="label" x="24" y="50">Row count</text>
+</svg>
