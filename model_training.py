@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""Stage 3: Train predictive models for block gas usage and congestion.
-
-This script implements two model families (Logistic Regression and Random Forest)
-to predict whether the next block will have higher gas usage based on recent block
-statistics. It follows the proposal guidelines with proper train/validation/test
-splits, hyperparameter tuning via grid search, and multi-metric evaluation.
-"""
 
 from __future__ import annotations
 
