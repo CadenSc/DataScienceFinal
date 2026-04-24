@@ -470,6 +470,24 @@ def main(argv: list[str] | None = None) -> int:
     for metric, value in rf_metrics["test"].items():
         print(f"  {metric}: {value:.4f}")
 
+    y_pred = lr_model.predict(X_test_scaled)
+    y_proba = lr_model.predict_proba(X_test_scaled)[:, 1]
+
+    with (output_dir / "lr_predictions.csv").open("w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["block_number", "actual", "predicted", "probability"])
+        for i, (actual, pred, prob) in enumerate(zip(y_test, y_pred, y_proba)):
+            writer.writerow([i, actual, pred, prob])
+
+    y_pred_rf = rf_model.predict(X_test_scaled)
+    y_proba_rf = rf_model.predict_proba(X_test_scaled)[:, 1]
+
+    with (output_dir / "rf_predictions.csv").open("w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["block_number", "actual", "predicted", "probability"])
+        for i, (actual, pred, prob) in enumerate(zip(y_test, y_pred_rf, y_proba_rf)):
+            writer.writerow([i, actual, pred, prob])
+
     metrics_by_model = {
         "Logistic Regression": lr_metrics,
         "Random Forest": rf_metrics,
