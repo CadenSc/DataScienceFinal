@@ -51,8 +51,18 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#1f2933}
 <text class="small" x="30" y="177.00">299</text>
 <line class="grid" x1="72" y1="68.00" x2="888" y2="68.00"/>
 <text class="small" x="30" y="72.00">399</text>
+<line class="axis" x1="72.00" y1="488" x2="72.00" y2="493"/>
+<text class="small" x="72.00" y="512" text-anchor="middle">0</text>
+<line class="axis" x1="235.20" y1="488" x2="235.20" y2="493"/>
+<text class="small" x="235.20" y="512" text-anchor="middle">12.0M</text>
+<line class="axis" x1="398.40" y1="488" x2="398.40" y2="493"/>
+<text class="small" x="398.40" y="512" text-anchor="middle">24.0M</text>
+<line class="axis" x1="561.60" y1="488" x2="561.60" y2="493"/>
+<text class="small" x="561.60" y="512" text-anchor="middle">36.0M</text>
+<line class="axis" x1="724.80" y1="488" x2="724.80" y2="493"/>
+<text class="small" x="724.80" y="512" text-anchor="middle">48.0M</text>
+<line class="axis" x1="888.00" y1="488" x2="888.00" y2="493"/>
+<text class="small" x="888.00" y="512" text-anchor="middle">60.0M</text>
 <text class="label" x="410.00" y="536">Gas used per block</text>
-<text class="small" x="72" y="512">0</text>
-<text class="small" x="818" y="512">6e+07</text>
 <text class="label" x="24" y="50">Row count</text>
 </svg>

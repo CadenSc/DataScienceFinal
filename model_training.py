@@ -13,6 +13,7 @@ import argparse
 import csv
 import json
 import math
+import pickle
 import sys
 from pathlib import Path
 from typing import Any
@@ -38,6 +39,7 @@ MODELS_OUTPUT_DIR = Path("model_outputs")
 RESULTS_PATH = MODELS_OUTPUT_DIR / "model_results.json"
 METRICS_PATH = MODELS_OUTPUT_DIR / "evaluation_metrics.csv"
 COMPARISON_PATH = MODELS_OUTPUT_DIR / "model_comparison.md"
+ARTIFACT_PATH = MODELS_OUTPUT_DIR / "model_artifacts.pkl"
 
 
 def load_engineered_data(path: Path) -> tuple[list[dict[str, str]], list[str]]:
@@ -101,6 +103,7 @@ def select_feature_columns(fieldnames: list[str]) -> list[str]:
         "scraped",
         "age_raw",
         "fee_recipient",
+        "target_",
     }
 
     features = [
@@ -172,7 +175,7 @@ def train_logistic_regression(
 
     lr = LogisticRegression(random_state=42)
     grid_search = GridSearchCV(
-        lr, param_grid, cv=5, scoring="roc_auc", n_jobs=-1, verbose=1
+        lr, param_grid, cv=5, scoring="roc_auc", n_jobs=1, verbose=1
     )
     grid_search.fit(X_train, y_train)
 
@@ -205,9 +208,9 @@ def train_random_forest(
         "max_features": ["sqrt", "log2"],
     }
 
-    rf = RandomForestClassifier(random_state=42, n_jobs=-1)
+    rf = RandomForestClassifier(random_state=42, n_jobs=1)
     grid_search = GridSearchCV(
-        rf, param_grid, cv=5, scoring="roc_auc", n_jobs=-1, verbose=1
+        rf, param_grid, cv=5, scoring="roc_auc", n_jobs=1, verbose=1
     )
     grid_search.fit(X_train, y_train)
 
@@ -502,10 +505,22 @@ def main(argv: list[str] | None = None) -> int:
     write_metrics_csv(metrics_by_model, output_dir / "evaluation_metrics.csv")
     write_comparison_markdown(metrics_by_model, output_dir / "model_comparison.md")
 
+    artifact = {
+        "logistic_regression": lr_model,
+        "random_forest": rf_model,
+        "scaler": scaler,
+        "feature_cols": feature_cols,
+        "target_description": "1 if the next block has higher gas_used than the current block, else 0",
+        "trained_from": str(input_path),
+    }
+    with (output_dir / "model_artifacts.pkl").open("wb") as handle:
+        pickle.dump(artifact, handle)
+
     print(f"✓ Results saved to {output_dir}")
     print(f"  - model_results.json: Full results and hyperparameters")
     print(f"  - evaluation_metrics.csv: Metrics in table format")
     print(f"  - model_comparison.md: Detailed comparison report")
+    print(f"  - model_artifacts.pkl: Reusable trained models for the frontend")
 
     return 0
 

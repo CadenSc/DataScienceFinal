@@ -92,6 +92,23 @@ def scale(value: float, old_min: float, old_max: float, new_min: float, new_max:
     return new_min + (value - old_min) * (new_max - new_min) / (old_max - old_min)
 
 
+def format_axis_number(value: float) -> str:
+    abs_value = abs(value)
+    if abs_value >= 1_000_000:
+        return f"{value / 1_000_000:.1f}M"
+    if abs_value >= 10_000:
+        return f"{value / 1_000:.0f}K"
+    if abs_value >= 1_000:
+        return f"{value:,.0f}"
+    if abs_value >= 10:
+        return f"{value:.0f}"
+    return f"{value:.2g}"
+
+
+def format_block_number(value: float) -> str:
+    return f"{value / 1_000_000:.3f}M"
+
+
 def draw_histogram(values: list[float], title: str, xlabel: str, output_path: Path, bins: int = 30) -> None:
     width, height = 920, 560
     margin_left, margin_right, margin_top, margin_bottom = 72, 32, 68, 72
@@ -133,9 +150,16 @@ def draw_histogram(values: list[float], title: str, xlabel: str, output_path: Pa
         lines.append(f'<line class="grid" x1="{x0}" y1="{y:.2f}" x2="{x0 + chart_width}" y2="{y:.2f}"/>')
         lines.append(f'<text class="small" x="30" y="{y + 4:.2f}">{count_label}</text>')
 
+    for tick in range(6):
+        pct = tick / 5
+        x = x0 + pct * chart_width
+        label = low + pct * (high - low)
+        lines.append(f'<line class="axis" x1="{x:.2f}" y1="{y0}" x2="{x:.2f}" y2="{y0 + 5}"/>')
+        lines.append(
+            f'<text class="small" x="{x:.2f}" y="{height - 48}" text-anchor="middle">{format_axis_number(label)}</text>'
+        )
+
     lines.append(f'<text class="label" x="{x0 + chart_width / 2 - 70:.2f}" y="{height - 24}">{safe_label(xlabel)}</text>')
-    lines.append(f'<text class="small" x="{x0}" y="{height - 48}">{low:.4g}</text>')
-    lines.append(f'<text class="small" x="{x0 + chart_width - 70}" y="{height - 48}">{high:.4g}</text>')
     lines.append(f'<text class="label" x="24" y="{margin_top - 18}">Row count</text>')
     write_svg(output_path, lines)
 
@@ -153,6 +177,9 @@ def draw_line_chart(
     ylabel: str,
     output_path: Path,
     normalize: bool = False,
+    x_values: list[float] | None = None,
+    xlabel: str = "Block number",
+    x_tick_formatter=format_axis_number,
 ) -> None:
     width, height = 980, 560
     margin_left, margin_right, margin_top, margin_bottom = 78, 36, 76, 78
@@ -163,7 +190,11 @@ def draw_line_chart(
     all_points: list[tuple[float, float]] = []
     processed: list[tuple[str, list[tuple[float, float]], str]] = []
     for label, values, color in series:
-        points = [(float(index), value) for index, value in enumerate(values) if value is not None]
+        points = [
+            (float(x_values[index] if x_values is not None else index), value)
+            for index, value in enumerate(values)
+            if value is not None
+        ]
         if normalize and points:
             ys = [value for _, value in points]
             low, high = min(ys), max(ys)
@@ -193,6 +224,15 @@ def draw_line_chart(
         lines.append(f'<line class="grid" x1="{x0}" y1="{y:.2f}" x2="{x0 + chart_width}" y2="{y:.2f}"/>')
         lines.append(f'<text class="small" x="18" y="{y + 4:.2f}">{label:.4g}</text>')
 
+    for tick in range(6):
+        pct = tick / 5
+        x = x0 + pct * chart_width
+        label = x_min + pct * (x_max - x_min)
+        lines.append(f'<line class="axis" x1="{x:.2f}" y1="{y0}" x2="{x:.2f}" y2="{y0 + 5}"/>')
+        lines.append(
+            f'<text class="small" x="{x:.2f}" y="{height - 48}" text-anchor="middle">{x_tick_formatter(label)}</text>'
+        )
+
     for label, points, color in processed:
         if len(points) < 2:
             continue
@@ -211,7 +251,7 @@ def draw_line_chart(
         lines.append(f'<rect x="{legend_x + offset}" y="{legend_y - 10}" width="14" height="14" fill="{color}"/>')
         lines.append(f'<text class="small" x="{legend_x + offset + 20}" y="{legend_y + 2}">{safe_label(label)}</text>')
 
-    lines.append(f'<text class="label" x="{x0 + chart_width / 2 - 88:.2f}" y="{height - 28}">Chronological block order</text>')
+    lines.append(f'<text class="label" x="{x0 + chart_width / 2 - 70:.2f}" y="{height - 28}">{safe_label(xlabel)}</text>')
     lines.append(f'<text class="label" x="20" y="{margin_top - 18}">{safe_label(ylabel)}</text>')
     write_svg(output_path, lines)
 
@@ -329,13 +369,18 @@ def draw_missingness_comparison(raw_rows: list[dict[str, str]], cleaned_rows: li
 def draw_spike_inspection(rows: list[dict[str, Any]], output_path: Path) -> None:
     congestion = [to_float(row.get("congestion_ratio")) for row in rows]
     high_flags = [to_float(row.get("congestion_flag_high")) for row in rows]
+    block_numbers = [to_float(row.get("block_number")) for row in rows]
     spike_indices = [index for index, flag in enumerate(high_flags) if flag == 1]
     width, height = 980, 560
     margin_left, margin_right, margin_top, margin_bottom = 78, 36, 76, 78
     chart_width = width - margin_left - margin_right
     chart_height = height - margin_top - margin_bottom
     lines = svg_start(width, height, "High Congestion Blocks Over Time")
-    points = [(float(index), value) for index, value in enumerate(congestion) if value is not None]
+    points = [
+        (block_numbers[index] if block_numbers[index] is not None else float(index), value)
+        for index, value in enumerate(congestion)
+        if value is not None
+    ]
     if not points:
         lines.append('<text x="78" y="130">No congestion ratio values available.</text>')
         write_svg(output_path, lines)
@@ -350,6 +395,22 @@ def draw_spike_inspection(rows: list[dict[str, Any]], output_path: Path) -> None
     lines.append(f'<line x1="{x0}" y1="{threshold_y:.2f}" x2="{x0 + chart_width}" y2="{threshold_y:.2f}" stroke="#d62728" stroke-dasharray="6 6"/>')
     lines.append(f'<text class="small" x="{x0 + 8}" y="{threshold_y - 8:.2f}">0.80 high congestion threshold</text>')
 
+    for tick in range(5):
+        pct = tick / 4
+        y = y0 - pct * chart_height
+        label = y_min + pct * (y_max - y_min)
+        lines.append(f'<line class="grid" x1="{x0}" y1="{y:.2f}" x2="{x0 + chart_width}" y2="{y:.2f}"/>')
+        lines.append(f'<text class="small" x="18" y="{y + 4:.2f}">{label:.2f}</text>')
+
+    for tick in range(6):
+        pct = tick / 5
+        x = x0 + pct * chart_width
+        label = x_min + pct * (x_max - x_min)
+        lines.append(f'<line class="axis" x1="{x:.2f}" y1="{y0}" x2="{x:.2f}" y2="{y0 + 5}"/>')
+        lines.append(
+            f'<text class="small" x="{x:.2f}" y="{height - 48}" text-anchor="middle">{format_block_number(label)}</text>'
+        )
+
     svg_points = []
     for x, y in downsample(points):
         sx = scale(x, x_min, x_max, x0, x0 + chart_width)
@@ -359,13 +420,14 @@ def draw_spike_inspection(rows: list[dict[str, Any]], output_path: Path) -> None
 
     for index in spike_indices[:: max(1, math.ceil(len(spike_indices) / 120))]:
         value = congestion[index]
+        block_number = block_numbers[index]
         if value is None:
             continue
-        sx = scale(index, x_min, x_max, x0, x0 + chart_width)
+        sx = scale(block_number if block_number is not None else index, x_min, x_max, x0, x0 + chart_width)
         sy = scale(value, y_min, y_max, y0, margin_top)
         lines.append(f'<circle cx="{sx:.2f}" cy="{sy:.2f}" r="3" fill="#d62728" opacity="0.85"/>')
 
-    lines.append(f'<text class="label" x="{x0 + chart_width / 2 - 88:.2f}" y="{height - 28}">Chronological block order</text>')
+    lines.append(f'<text class="label" x="{x0 + chart_width / 2 - 60:.2f}" y="{height - 28}">Block number</text>')
     lines.append('<text class="label" x="20" y="58">Congestion ratio</text>')
     write_svg(output_path, lines)
 
@@ -441,6 +503,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     rows = read_csv(input_path)
+    block_numbers = [to_float(row.get("block_number")) for row in rows]
     draw_histogram(numeric_values(rows, "txn_count"), "Transaction Count Distribution", "Transactions per block", output_dir / "txn_count_distribution.svg")
     draw_histogram(numeric_values(rows, "gas_used"), "Gas Used Distribution", "Gas used per block", output_dir / "gas_used_distribution.svg")
     draw_line_chart(
@@ -448,6 +511,9 @@ def main(argv: list[str] | None = None) -> int:
         "Base Fee Trend Over Recent Blocks",
         "Base fee (Gwei)",
         output_dir / "base_fee_trend.svg",
+        x_values=block_numbers,
+        xlabel="Block number",
+        x_tick_formatter=format_block_number,
     )
     draw_line_chart(
         [
@@ -457,6 +523,9 @@ def main(argv: list[str] | None = None) -> int:
         "Congestion Ratio Over Recent Blocks",
         "Gas used / gas limit",
         output_dir / "congestion_ratio_trend.svg",
+        x_values=block_numbers,
+        xlabel="Block number",
+        x_tick_formatter=format_block_number,
     )
     draw_line_chart(
         [
@@ -468,6 +537,9 @@ def main(argv: list[str] | None = None) -> int:
         "Normalized rolling values",
         output_dir / "rolling_activity_trends.svg",
         normalize=True,
+        x_values=block_numbers,
+        xlabel="Block number",
+        x_tick_formatter=format_block_number,
     )
     heatmap_columns = [
         "txn_count",

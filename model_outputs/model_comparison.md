@@ -8,8 +8,8 @@ Two models were trained to predict whether the next Ethereum block will have hig
 
 | Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
 |---|---:|---:|---:|---:|---:|
-| Logistic Regression | 0.9880 | 0.9955 | 0.9781 | 0.9867 | 0.9993 |
-| Random Forest | 0.9650 | 0.9930 | 0.9298 | 0.9604 | 0.9975 |
+| Logistic Regression | 0.7888 | 0.8182 | 0.6908 | 0.7491 | 0.8642 |
+| Random Forest | 0.7898 | 0.7808 | 0.7500 | 0.7651 | 0.8715 |
 
 ## Train vs. Test Performance
 
@@ -17,21 +17,21 @@ Two models were trained to predict whether the next Ethereum block will have hig
 
 | Metric | Train | Test | Gap |
 |---|---:|---:|---:|
-| accuracy | 0.9997 | 0.9880 | 0.0117 |
-| precision | 1.0000 | 0.9955 | 0.0045 |
-| recall | 0.9993 | 0.9781 | 0.0212 |
-| f1 | 0.9996 | 0.9867 | 0.0129 |
-| roc_auc | 1.0000 | 0.9993 | 0.0007 |
+| accuracy | 0.7941 | 0.7888 | 0.0053 |
+| precision | 0.8082 | 0.8182 | -0.0100 |
+| recall | 0.7202 | 0.6908 | 0.0294 |
+| f1 | 0.7617 | 0.7491 | 0.0126 |
+| roc_auc | 0.8716 | 0.8642 | 0.0074 |
 
 ### Random Forest
 
 | Metric | Train | Test | Gap |
 |---|---:|---:|---:|
-| accuracy | 1.0000 | 0.9650 | 0.0350 |
-| precision | 1.0000 | 0.9930 | 0.0070 |
-| recall | 1.0000 | 0.9298 | 0.0702 |
-| f1 | 1.0000 | 0.9604 | 0.0396 |
-| roc_auc | 1.0000 | 0.9975 | 0.0025 |
+| accuracy | 0.8108 | 0.7898 | 0.0210 |
+| precision | 0.8006 | 0.7808 | 0.0198 |
+| recall | 0.7801 | 0.7500 | 0.0301 |
+| f1 | 0.7902 | 0.7651 | 0.0251 |
+| roc_auc | 0.8964 | 0.8715 | 0.0249 |
 
 ## Confusion Matrices
 
